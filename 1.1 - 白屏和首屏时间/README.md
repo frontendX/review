@@ -7,7 +7,7 @@
 
 ![白屏时间](https://upload-images.jianshu.io/upload_images/1726248-35f2c83b617ac4f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 计算白屏时间
+#### 计算白屏时间
 
 因此，我们通常认为浏览器开始渲染 `<body>` 标签或者解析完 `<head>` 标签的时刻就是页面白屏结束的时间点。
 
