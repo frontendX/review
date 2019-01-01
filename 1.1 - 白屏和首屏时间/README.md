@@ -11,7 +11,7 @@
 
 因此，我们通常认为浏览器开始渲染 `<body>` 标签或者解析完 `<head>` 标签的时刻就是页面白屏结束的时间点。
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,8 @@
 #### 计算首屏时间常用的方法有：
 ###### 1、首屏模块标签标记法
 首屏模块标签标记法，通常适用于首屏内容不需要通过拉取数据才能生存以及页面不考虑图片等资源加载的情况。我们会在 HTML 文档中对应首屏内容的标签结束位置，使用内联的 JavaScript 代码记录当前时间戳。如下所示：
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +105,7 @@
 
 此时：首屏时间 = 加载最慢的图片的时间点 - performance.timing.navigationStart;
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
