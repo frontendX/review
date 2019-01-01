@@ -8,7 +8,7 @@
 
 1.1、声明一个对象和一个函数，打印一下对象和函数的`__proto__`
 
-```
+```javascript
 let A = function() {};
 let B = {};
 
@@ -18,7 +18,7 @@ console.log( "B对象", B.__proto__ );
 ![__proto__](https://upload-images.jianshu.io/upload_images/1726248-952d7d22aae6110d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 以上**A函数**和**B对象**的`__proto__`为啥不一样呢？再看一下下面的分析：
-```
+```javascript
 let A = function() {};
 let B = {};
 
@@ -31,7 +31,7 @@ console.log( "B对象", B.__proto__ );
 
 1.2、声明一个对象和一个函数，打印一下对象和函数的`prototype `
 
-```
+```javascript
 let A = function() {};
 let B = {};
 
