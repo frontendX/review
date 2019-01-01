@@ -6,4 +6,5 @@
 4、[常见数据结构与算法整理总结](https://www.cnblogs.com/wanghuaijun/p/7302303.html)<br/>
 5、[前端表现与数据分离之模式](https://www.jianshu.com/p/5ae70abfefe8?utm_campaign)<br/>
 6、[JS原型链与继承](https://juejin.im/post/58f94c9bb123db411953691b)<br/>
-7、[JavaScript开发者应懂的n个概念](https://github.com/stephentian/33-js-concepts?utm_source=gold_browser_extension#23-%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE)
+7、[JavaScript开发者应懂的n个概念](https://github.com/stephentian/33-js-concepts?utm_source=gold_browser_extension#23-%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE)<br/>
+8、js里的__proto__和prototype到底有什么区别
