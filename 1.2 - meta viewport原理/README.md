@@ -33,3 +33,39 @@
 `ideal viewport` 是一个能完美适配移动设备的 `viewport`。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 `ideal viewport`。<br/>
 `ideal viewport` 并没有一个固定的尺寸，不同的设备有不同的 `ideal viewport`。例如，所有的iphone的 `ideal viewport` 宽度都是320px，无论它的屏幕宽度是320还是640。<br/>
 **`ideal viewport` 的意义在于，无论在何种分辨率的屏幕下，针对 `ideal viewport`  而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。**
+
+##### 3、ideal viewport（理想视窗）
+`ideal viewport` 是一个能完美适配移动设备的 `viewport`。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 `ideal viewport`。
+`ideal viewport` 并没有一个固定的尺寸，不同的设备有不同的 `ideal viewport`。例如，所有的iphone的 `ideal viewport` 宽度都是320px，无论它的屏幕宽度是320还是640。
+**`ideal viewport` 的意义在于，无论在何种分辨率的屏幕下，针对 `ideal viewport`  而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。**
+
+### 把当前的viewport宽度设置为 ideal viewport 的宽度
+要得到 `ideal viewport` 就必须把默认的 `layout viewport` 的宽度设为移动设备的屏幕宽度。因为 `meta viewport` 中的width能控制 `layout viewport` 的宽度，所以我们只需要把 `width设为width-device` 这个特殊的值就行了。
+
+**代码1：**
+```html
+<meta name="viewport" content="width=device-width">
+```
+
+可以看到通过 `width=device-width`，所有浏览器都能把当前的 `viewport` 宽度变成 `ideal viewport` 的宽度，但要注意的是，在iphone和ipad上，无论是竖屏还是横屏，宽度都是竖屏时 `ideal viewport` 的宽度。
+![ideal viewport](https://upload-images.jianshu.io/upload_images/1726248-d858ed4b511abfbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+**代码2：**
+```html
+<meta name="viewport" content="initial-scale=1">
+```
+这句代码也能达到和前一句代码一样的效果，也可以把当前的的 `viewport` 变为  `ideal viewport`。
+
+这句代码的作用只是不对当前的页面进行缩放，也就是页面本该是多大就是多大。那为什么会有 `width=device-width` 的效果呢？
+
+要想清楚这件事情，首先你得弄明白这个缩放是相对于什么来缩放的，因为这里的缩放值是1，也就是没缩放，但却达到了 `ideal viewport` 的效果，所以，缩放是相对于 `ideal viewport` 来进行缩放的，当对 `ideal viewport` 进行100%的缩放，也就是缩放值为1的时候，不就得到了 `ideal viewport` 吗？事实证明，的确是这样的。下图是各大移动端的浏览器当设置了 `<meta name="viewport" content="initial-scale=1">` 后是否能把当前的 `viewport` 宽度变成 `ideal viewport` 的宽度的测试结果。
+![ideal viewport](https://upload-images.jianshu.io/upload_images/1726248-2f15207203778c03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+结果表明 `initial-scale=1` 也能把当前的 `viewport` 宽度变成 `ideal viewport` 的宽度，但这次轮到了windows phone 上的IE 无论是竖屏还是横屏都把宽度设为竖屏时 `ideal viewport` 的宽度。
+
+总结：所以终上**代码1与代码2**，要把当前的 `viewport` 宽度设为 `ideal viewport` 的宽度，同时解决两种的毛病，则可以写成下面这条代码：
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
