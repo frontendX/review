@@ -3,7 +3,7 @@
 ### 1、闭包的概念
 
 **闭包**就是能够读取其他函数内部变量的函数，函数没有被释放，整条作用域链上的局部变量都将得到保留。
-由于在javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成**定义在一个函数内部的函数**。
+由于在javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成定义在一个函数内部的函数。
 所以，在本质上，闭包就是将函数内部和函数外部连接的一座桥梁。
 
 ### 2、闭包的用途
@@ -78,6 +78,63 @@
             console.log( person.getName() );    // 输出：balabala
             person.setName( "diudiudiu" );
             console.log( person.getName() );    // 输出：diudiudiu
+        </script>
+    </body>
+</html>
+```
+
+##### 2.3、用闭包模仿块级作用域
+
+用 `var` 定义变量存在变量提升问题，例如：
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用闭包模仿块级作用域</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        for( var i = 0; i < 10; i++ ) {
+            console.info( i );
+        }
+        alert( i );  // 变量提升，弹出10
+
+        //为了避免i的提升可以这样做
+        (function () {
+            for( var j = 0; j < 10; j++ ) {
+                console.info( j );
+            }
+        })();
+        alert( j );   // Uncaught ReferenceError: j is not defined
+                      // 因为i随着闭包函数的退出，执行环境销毁，变量回收
+        </script>
+    </body>
+</html>
+```
+
+### 2.4、this指向问题
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>this指向问题</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var person = {
+            name: "balabala",
+            getName() {
+                return function() {
+                    console.info( this.name );
+                }
+            }
+        };
+        person.getName()();    // underfined
+                             // 因为里面的闭包函数是在window作用域下执行的，也就是说，this指向window
+
         </script>
     </body>
 </html>
