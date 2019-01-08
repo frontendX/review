@@ -53,6 +53,39 @@
 `instance` 实例通过原型链找到了 `Father` 原型中的 `getFatherValue` 方法。
 **注意：**此时 `instance.constructor ` 指向的是 `Father`，这是因为 `Son.prototype` 中的 `constructor` 被重写。
 
+### 了解一下 `constructor` 构造函数
+函数还有一种用法，就是把它作为构造函数使用。像 `Object` 和 `Array` 这样的原生构造函数，在运行时会自动出现在执行环境中。此外，也可以创建自定义的构造函数，从而自定义对象类型的属性和方法。如下代码所示：
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>constructor</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Animal( name, color ) {
+                this.name = name;
+                this.color = color;
+                this.sayName = function() {
+                    console.log( this.name );
+                }
+            }
+
+            let animal1 = new Animal( "dog", "black" );
+            animal1.sayName();
+            let animal2 = new Animal( "cat", "white" );
+            animal2.sayName();
+        </script>
+    </body>
+</html>
+```
+
+在这个例子中，我们创建了一个自定义构造函数 `Animal()``，并通过该构造函数创建了两个普通对象 `animal1` 和 `animal2`，这两个普通对象均包含2个属性和1个方法。
+
+你应该注意到函数名 `Animal` 使用的是大写字母 `P`。按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。这个做法借鉴自其他面向对象语言，主要是为了区别于 JavaScript 中的其他函数；因为构造函数本身也是函数，只不过可以用来创建对象而已。
+
 ### 借用构造函数
 
 > 基本思想：即在子类型构造函数的内部调用超类型构造函数。
