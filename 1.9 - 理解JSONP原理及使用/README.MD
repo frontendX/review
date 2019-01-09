@@ -20,9 +20,9 @@
         <title>理解JSONP原理及使用</title>
     </head>
     <body>
-        <script type="text/javascript" src="https://ptres.37.com/js/sq/lib/sq.core.js"></script>
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
         <script type="text/javascript">
-            function callback( data ) {
+            function jsonhandle( data ) {
                 console.log( data );
             }
 
@@ -56,7 +56,7 @@
         <title>理解JSONP原理及使用</title>
     </head>
     <body>
-        <script type="text/javascript" src="https://ptres.37.com/js/sq/lib/sq.core.js"></script>
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
         <script type="text/javascript">
         function jsonhandle( data ) {
             console.log( "name:" + data.name );
@@ -87,9 +87,9 @@ name:轮毂
         <title>理解JSONP原理及使用</title>
     </head>
     <body>
-        <script type="text/javascript" src="https://ptres.37.com/js/sq/lib/sq.core.js"></script>
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
         <script type="text/javascript">
-            function callback( data ) {
+            function jsonhandle( data ) {
                 console.log( data );
             }
 
