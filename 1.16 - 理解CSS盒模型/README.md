@@ -5,7 +5,8 @@
 > 在标准的盒子模型中，`width` 指 `content` 部分的宽度
 
 ### css的两种盒模型 - IE盒模型
-![IE盒模型](https://upload-images.jianshu.io/upload_images/1726248-8f74a45854b01cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![IE盒模型.png](https://upload-images.jianshu.io/upload_images/1726248-7acda98d8018d127.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 > 在IE盒子模型中，`width` 表示 `content + padding + border` 这三个部分的宽度
 
